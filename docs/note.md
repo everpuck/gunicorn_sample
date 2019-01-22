@@ -10,6 +10,10 @@
 + gunicorn (latest)19.9.0
 + CentOS 7.6
 
+## git 地址
+
+https://github.com/everpuck/gunicorn_sample.git
+
 ## 实践一
 
 ---
