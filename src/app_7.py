@@ -1,8 +1,8 @@
 # coding: utf-8
 
-# import gevent
-# from gevent import monkey
-# monkey.patch_all()
+import gevent
+from gevent import monkey
+monkey.patch_all()
 import os
 # import time
 import threading
@@ -44,10 +44,10 @@ def app(environ, start_response):
     #     buf = environ['wsgi.input'].read()
         # MEM_QUEUE.put(buf)
 
-    for url in urls:
-        print_head(url)
-    # jobs = [gevent.spawn(print_head, _url) for _url in urls]
-    # gevent.wait(jobs)
+    # for url in urls:
+        # print_head(url)
+    jobs = [gevent.spawn(print_head, _url) for _url in urls]
+    gevent.wait(jobs)
 
     data = "hello world\n"
     # data = json.dumps(data)
